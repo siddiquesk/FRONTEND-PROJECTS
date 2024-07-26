@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<meta lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>
+  operator
+</title>
+<style>
+
+#box{
+  width: 900px;
+  height: 600px;
+  border: 10px solid navy;
+  margin: 20px auto;
+  box-sizing: border-box;
+  padding: 10px;
+}
+#pic{
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#tool{
+  border: 3px solid navy;
+  width: 200px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  float: left;
+  margin: 10px;
+
+}
+#tool p{
+  margin: 0;
+  margin-bottom: 10px;
+  font-family: sans-serif;
+}
+
+
+</style>
+</head>
+<body>
+  <div id="box">
+    <img src="danj.jpg" id="pic">
+    <div id="tool">
+      <p>Brightness</p>
+      <input type="range" id="bright" min="0" max="200" oninput="bright()">
+
+    </div>
+   <div id="tool">
+      <p>Contrast</p>
+      <input type="range" id="contrast" min="0" max="400" oninput="contrast()">
+   </div>
+
+   <div id="tool">
+      <p>Saturate</p>
+      <input type="range" id="saturate" min="0" max="500" oninput="saturate()">
+   </div>
+    <div id="tool">
+      <p>opacity</p>
+      <input type="range" id="opacity" min="0" max="500" oninput="opacity()">
+   </div>
+  </div>
+
+  <script>
+
+function bright(){
+  let x=document.getElementById("bright").value;
+  let y=document.getElementById("pic");
+  y.style.filter="brightness("+x+"%)";
+}
+
+function contrast(){
+  let x=document.getElementById("contrast").value;
+  let y=document.getElementById("pic");
+  y.style.filter="contrast("+x+"%)";
+}
+function saturate(){
+  let x=document.getElementById("saturate").value;
+  let y=document.getElementById("pic");
+  y.style.filter="saturate("+x+"%)";
+}
+
+
+
+
+
+
+
+  </script>
+
+</body>
+</html>
